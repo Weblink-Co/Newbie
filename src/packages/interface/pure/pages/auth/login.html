@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>Loign</title>
+    <title>Login</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet" />
   </head>
   <body>
@@ -10,61 +10,100 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-6 p-4">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="my-5 px-5">
+                <h1 class="display-3">LOGO</h1>
+              </div>
               <!-- Login form -->
-              <div class="d-flex flex-column align-items-center justify-content-center">
-                <div class="my-5 px-5">
-                  <h1 class="display-3">LOGO</h1>
+              <form
+                id="signin-form"
+                class="pt-5 px-4 w-100"
+              >
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInput">Email address</label>
+
+                  <div id="emailHelp" class="form-text">
+                    We'll never share your email with anyone else.
+                  </div>
                 </div>
-                <form class="pt-5 px-4 w-100">
-                  <div class="form-floating mb-3">
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="floatingInput"
-                      placeholder="name@example.com"
-                    />
-                    <label for="floatingInput">Email address</label>
-    
-                    <div id="emailHelp" class="form-text">
-                      We'll never share your email with anyone else.
-                    </div>
-                  </div>
-                  <div class="form-floating mb-4">
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="floatingPassword"
-                      placeholder="Password"
-                    />
-                    <label for="floatingPassword">Password</label>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg w-100">
+                <div class="form-floating mb-4">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary w-100">
+                  Submit
+                </button>
+                <p class="small pt-3 pb-4">
+                  <a
+                    id="forgot-pass"
+                    class="text-muted text-decoration-none"
+                    href="#"
+                    >Forgot Password?</a
+                  >
+                </p>
+                <!-- go to signup -->
+                <div class="mt-5">
+                  <p>
+                    Don'y have an account?
+                    <a class="text-decoration-none" href="#">Register Here</a>
+                  </p>
+                </div>
+              </form>
+              <!-- forgot password dynamic -->
+              <div id="forgot-section" class="pt-5 px-4 w-100 d-none">
+                <div class="alert alert-primary" role="alert">
+                  After rocovery submission, reset password link will be sent to
+                  your email
+                </div>
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control forgot-input"
+                    id="recovery-email"
+                    placeholder="name@example.com"
+                  />
+                  <label for="recovery-email">Recovery Email</label>
+                  <button
+                    id="forgot-btn"
+                    type="submit"
+                    class="btn btn-lg btn-primary my-4 w-100"
+                  >
                     Submit
                   </button>
-                  <p class="small pt-3 pb-4">
-                    <a class="text-muted text-decoration-none" href="#"
-                      >Forgot Password?</a
-                    >
-                  </p>
-                  <!-- go to signup -->
-                <div class="mt-5">
-                    <p>
-                      Don'y have an account?
-                      <a class="text-decoration-none" href="#">Register Here</a>
-                    </p>
-                  </div>
-                </form>
+                  <a
+                    id="sing-in-up"
+                    class="text-decoration-none text-muted"
+                    href="#"
+                    >Sign in / Sign up</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <!-- image -->
           <div class="col-sm-6 g-0 d-none d-sm-block">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
-            class="img-fluid vh-100 vw-100"
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+              class="img-fluid vh-100 vw-100"
             />
-        </div>
+          </div>
         </div>
       </div>
-    </section>    
+    </section>
+    <script src="../../components/forgot-password/forgot-password.js"></script>
     <script src="../../dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
