@@ -1,0 +1,135 @@
+const register = document.querySelector('.register');
+const formLogin = document.querySelector('form');
+
+register.addEventListener('click', registerAcc);
+
+function registerAcc(event) {
+    event.preventDefault();
+    formLogin.innerHTML = '';
+
+    let divElem = document.createElement('div');
+    divElem.className = 'form-floating mb-3';
+
+    let inputEmail = document.createElement('input');
+    inputEmail.type = 'email';
+    inputEmail.classList.add('form-control');
+    inputEmail.placeholder = "name@example.com";
+
+    let labelEmail = document.createElement('label');
+    labelEmail.innerHTML = 'Email Address';
+
+    let divElem1 = document.createElement('div');
+    divElem1.className = 'form-floating mb-3';
+
+    let inputPassword = document.createElement('input');
+    inputPassword.type = 'password';
+    inputPassword.classList.add('form-control');
+    inputPassword.placeholder = "Password";
+
+    let labelPassword = document.createElement('label');
+    labelPassword.innerHTML = 'Password';
+
+    let divElem2 = document.createElement('div');
+    divElem2.className = 'form-floating mb-3';
+
+    let inputFirstName = document.createElement('input');
+    inputFirstName.type = 'text';
+    inputFirstName.classList.add('form-control');
+    inputFirstName.placeholder = "FirstName";
+
+    let labelFirstName = document.createElement('label');
+    labelFirstName.innerHTML = 'First Name';
+
+    let divElem3 = document.createElement('div');
+    divElem3.className = 'form-floating mb-3';
+
+    let inputLastName = document.createElement('input');
+    inputLastName.type = 'text';
+    inputLastName.classList.add('form-control');
+    inputLastName.placeholder = "LastName";
+
+    let labelLastName = document.createElement('label');
+    labelLastName.innerHTML = 'Last Name';
+
+    let btnRegistered = document.createElement('button');
+    btnRegistered.type = 'submit';
+    btnRegistered.className = 'btn btn-lg btn-primary w-100';
+    btnRegistered.innerHTML = 'Sign up';
+
+    let divElemLogin = document.createElement('div');
+    divElemLogin.classList.add('mt-5');
+
+    let pMessage = document.createElement('p');
+    pMessage.innerHTML = "Already have an account?";
+
+    let aLinkLogin = document.createElement('a');
+    aLinkLogin.className = 'text-decoration-none register';
+    aLinkLogin.innerHTML = ' Login';
+    aLinkLogin.style.cursor = 'pointer';
+    aLinkLogin.addEventListener('click', loginAcc);
+
+    divElem.append(inputEmail, labelEmail);
+    divElem1.append(inputPassword, labelPassword);
+    divElem2.append(inputFirstName, labelFirstName);
+    divElem3.append(inputLastName, labelLastName);
+    pMessage.append(aLinkLogin)
+    divElemLogin.append(pMessage);
+    formLogin.append(divElem, divElem1, divElem2, divElem3, btnRegistered, divElemLogin);
+}
+
+function loginAcc() {
+    formLogin.innerHTML = '';
+
+    let divElem = document.createElement('div');
+    divElem.className = 'form-floating mb-3';
+
+    let inputEmail = document.createElement('input');
+    inputEmail.type = 'email';
+    inputEmail.classList.add('form-control');
+    inputEmail.placeholder = "name@example.com";
+
+    let labelEmail = document.createElement('label');
+    labelEmail.innerHTML = 'Email Address';
+
+    let divElem1 = document.createElement('div');
+    divElem1.className = 'form-floating mb-3';
+
+    let inputPassword = document.createElement('input');
+    inputPassword.type = 'password';
+    inputPassword.classList.add('form-control');
+    inputPassword.placeholder = "Password";
+
+    let labelPassword = document.createElement('label');
+    labelPassword.innerHTML = 'Password';
+
+    let btnRegistered = document.createElement('button');
+    btnRegistered.type = 'submit';
+    btnRegistered.className = 'btn btn-lg btn-primary w-100';
+    btnRegistered.innerHTML = 'Login';
+
+    let divElemLogin = document.createElement('div');
+    divElemLogin.classList.add('mt-5');
+
+    let pMessage = document.createElement('p');
+    pMessage.innerHTML = "Don'y have an account?";
+
+    let aLinkLogin = document.createElement('a');
+    aLinkLogin.className = 'text-decoration-none register';
+    aLinkLogin.innerHTML = ' Sign up';
+    aLinkLogin.style.cursor = 'pointer';
+    aLinkLogin.addEventListener('click', registerAcc);
+
+    let pForget = document.createElement('p');
+    pForget.className = 'small pt-3 pb-4';
+
+    let aForget = document.createElement('a');
+    aForget.className = 'text-muted text-decoration-none';
+    aForget.innerHTML = 'Forget Password?';
+
+    divElem.append(inputEmail, labelEmail);
+    divElem1.append(inputPassword, labelPassword);
+    pMessage.append(aLinkLogin);
+    pForget.append(aForget);
+    divElemLogin.append(pMessage);
+    formLogin.append(divElem, divElem1, btnRegistered, pForget, divElemLogin);
+}
