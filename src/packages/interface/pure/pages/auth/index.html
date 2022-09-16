@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Login Form</title>
+</head>
+
+<body>
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-5 p-4">
+          <div class="d-flex flex-column align-items-center justify-content-center">
+            <div class="my-5 px-5">
+              <h1 class="display-3">WEBLINK</h1>
+            </div>
+            <!-- Login form -->
+            <form id="signin-form" class="pt-5 px-4 w-100">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" placeholder="name@example.com" />
+                <label>Email Address</label>
+              </div>
+              <div class="form-floating mb-4">
+                <input type="password" class="form-control" placeholder="Password" />
+                <label>Password</label>
+              </div>
+              <button type="submit" class="btn btn-lg btn-primary w-100">
+                Login
+              </button>
+              <p class="small pt-3 pb-4">
+                <a id="forgotPass" class="text-muted text-decoration-none" style="cursor: pointer">Forgot
+                  Password?</a>
+              </p>
+              <!-- go to signup -->
+              <div class="mt-5">
+                <p>
+                  Don'y have an account?
+                  <a class="text-decoration-none" id="register" style="cursor: pointer">Sign up</a>
+                </p>
+              </div>
+            </form>
+            <!-- regiseter form dynamic-->
+            <div class="pt-5 px-4 w-100 d-none" id="registerForm">
+              <div class="form-floating mb-3"><input type="email" class="form-control"
+                  placeholder="name@example.com"><label>Email
+                  Address</label></div>
+              <div class="form-floating mb-3"><input type="password" class="form-control"
+                  placeholder="Password"><label>Password</label></div>
+              <div class="form-floating mb-3"><input type="text" class="form-control"
+                  placeholder="FirstName"><label>First
+                  Name</label></div>
+              <div class="form-floating mb-3"><input type="text" class="form-control" placeholder="LastName"><label>Last
+                  Name</label>
+              </div><button type="submit" class="btn btn-lg btn-primary w-100">Sign up</button>
+              <div class="mt-5">
+                <p>Already have an account?<a class="text-decoration-none register" style="cursor: pointer" id="login">
+                    Login</a></p>
+              </div>
+            </div>
+            <!-- forgot password dynamic -->
+            <div id="forgot-section" class="pt-5 px-4 w-100 d-none">
+              <div class="alert alert-primary" role="alert">
+                After rocovery submission, reset password link will be sent to
+                your email
+              </div>
+              <div class="form-floating">
+                <input type="email" class="form-control forgot-input" placeholder="name@example.com" />
+                <label>Recovery Email</label>
+                <button type="submit" class="btn btn-lg btn-primary my-4 w-100">
+                  Submit
+                </button>
+                <a id="singInUp" class="text-decoration-none text-muted" style="cursor: pointer">Sign in
+                  / Sign
+                  up</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- image -->
+        <div class="col-sm-7 g-0 d-none d-sm-block">
+          <img src="https://picsum.photos/id/157/500/1000" class="img-fluid vh-100 vw-100" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./swap.js"></script>
+
+</body>
+
+</html>
